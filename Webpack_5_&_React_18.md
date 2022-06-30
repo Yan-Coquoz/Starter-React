@@ -67,6 +67,8 @@ npm install --save-dev webpack webpack-cli webpack-dev-server style-loader babel
 - [Utilisation du CSS](https://webpack.js.org/loaders/css-loader/)
 - [Utilisation du SCSS](https://webpack.js.org/loaders/sass-loader/) A la place du CSS.
 
+### Configuration de Webpack
+
 Création d'un dossier `config` à la racine du projet, d'un fichier de configuration `webpack.config.js` ainsi que d'un fichier pour les routes à suivre `paths.js`.
 
 ```javascript
@@ -167,7 +169,7 @@ module.exports = {
 };
 ```
 
-Explications :
+Explications sommaire :
 
 - `entry` est le point d'entrée de notre application pour Webpack et lui indique aussi ou sont regroupés nos fichiers.
 - `module` aide a définir comment les modules exportés sont transforméset lesquel sont inclus en fonction du tableau `rules`.
@@ -184,7 +186,7 @@ La propriété `publicPath` est une propriété spéciale qui nous aide avec not
 
 Nous nous sommes installés [`webpack-dev-server`](https://webpack.js.org/configuration/dev-server/) dans la propriété `devServer`. Cela ne nécessite pas grand-chose pour nos besoins - juste l'emplacement à partir duquel nous servons les fichiers statiques (tels que notre index.html) et le port sur lequel nous voulons exécuter le serveur. Notez que `devServer` possède également une propriété [`publicPath`](https://webpack.js.org/configuration/dev-server/#devserver-publicpath-). Cela indique `publicPath` au serveur où se trouve réellement notre code groupé.
 
-Ce dernier élément aurait pu être un peu déroutant - Faites très attention ici : [`output.publicPath`](https://webpack.js.org/configuration/output/#output-publicpath) et [`devServer.publicPath`](https://webpack.js.org/configuration/dev-server/#devserver-publicpath-) sont différents. Lisez les deux entrées. Deux fois.
+Ce dernier élément aurait pu être un peu déroutant - Faites très attention ici : [`output.publicPath`](https://webpack.js.org/configuration/output/#output-publicpath) et [`devServer.publicPath`](https://webpack.js.org/configuration/dev-server/#devserver-publicpath-) sont différents.
 
 Enfin, puisque nous voulons utiliser le `hotModuleReplacement`, nous n'avons pas besoin d'actualiser constamment pour voir nos modifications. Tout ce que nous faisons pour cela en termes de ce fichier est d'instancier une nouvelle instance du plugin dans la propriété `plugins` et de nous assurer que nous définissons `hot` sur `true` dans `devServer`.
 [hot module Doc](https://webpack.js.org/guides/hot-module-replacement/)
@@ -198,11 +200,13 @@ npm install file-loader --save-dev
 Configuration du module dans le fichier `webpack.config.js`:
 [file loader](https://v4.webpack.js.org/loaders/file-loader/#getting-started)
 
-## Mise en place de React
+## installation de React
 
 ```bash
 npm install react react-dom
 ```
+
+### Mise en place
 
 Dans le dossier `src`, créer un fichier `index.js` c'est le point d'entrée de l'application.
 
@@ -231,3 +235,9 @@ const App = () => {
 
 export default App;
 ```
+
+## installation de Prettier et eslint
+
+### configuration
+
+## installation  React Router
